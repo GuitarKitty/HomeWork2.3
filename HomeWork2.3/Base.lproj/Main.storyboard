@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-a7-79l">
                                 <rect key="frame" x="20" y="108" width="280" height="98"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYU-Rd-fXm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User Name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HYU-Rd-fXm">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no"/>
@@ -54,6 +54,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBM-RH-v3t">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                                                 <state key="normal" title="Forgot username?"/>
+                                                <connections>
+                                                    <action selector="forgotUserNameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VhQ-oC-js1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-Zm-5VM">
                                                 <rect key="frame" x="165" y="0.0" width="123" height="30"/>
@@ -70,10 +73,10 @@
                             <constraint firstItem="Gjk-QU-xKH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="21:284" id="BJy-Eu-aS7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vIF-Xo-7lu" secondAttribute="trailing" constant="16" id="KlV-fW-RKt"/>
                             <constraint firstItem="vIF-Xo-7lu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ms4-vR-2ih"/>
-                            <constraint firstItem="nxE-a7-79l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="108" id="QDi-CD-RH1"/>
                             <constraint firstItem="nxE-a7-79l" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wyf-YL-quy"/>
                             <constraint firstItem="vIF-Xo-7lu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XTn-BA-bhm"/>
                             <constraint firstItem="nxE-a7-79l" firstAttribute="width" secondItem="vIF-Xo-7lu" secondAttribute="height" multiplier="70:19" id="ZIK-Vn-Ys6"/>
+                            <constraint firstItem="vIF-Xo-7lu" firstAttribute="top" secondItem="nxE-a7-79l" secondAttribute="bottom" constant="40" id="gUa-ZL-kuI"/>
                             <constraint firstItem="nxE-a7-79l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kAs-jv-WZe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nxE-a7-79l" secondAttribute="trailing" constant="20" id="nv5-2O-6c7"/>
                         </constraints>
@@ -120,7 +123,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LM8-bp-Yud" kind="unwind" unwindAction="unwinbdSegueToMainScreenWithSegue:" id="87e-bb-ora"/>
+                                    <segue destination="LM8-bp-Yud" kind="unwind" unwindAction="unwindSegueToLoginScreenWithSegue:" id="7Yk-VT-p08"/>
                                 </connections>
                             </button>
                         </subviews>
