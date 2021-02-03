@@ -8,10 +8,16 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var logInButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        logInButton.layer.cornerRadius = 5
+        
     }
 
 
