@@ -7,10 +7,10 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var userNameTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet var logInButton: UIButton!
     
     override func viewDidLoad() {
@@ -18,18 +18,37 @@ class LoginViewController: UIViewController {
         
         logInButton.layer.cornerRadius = 5
         
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+
+    @IBAction func logInButtonPressed() {
+        if userNameTextField.text != "User" || passwordTextField.text != "Password"{
+            passwordTextField.text?.removeAll()
+            showAllert(with: "Invaild User Name or Password",and: "Please, try again")
+          }
     }
     
-    @IBAction func unwindSegueToLoginScreen (segue: UIStoryboardSegue){
-        userNameTextField.text?.removeAll()
-        passwordTextField.text?.removeAll()
-    }
     @IBAction func forgotUserNameButton(_ sender: Any) {
         showAllert(with: "Forgot your User Name?", and: "Your name is User 😼")
     }
     @IBAction func forgotPasswordButton(_ sender: Any) {
         showAllert(with: "Forgot your Password?", and: "Your password is Password 😸")
     }
+    
+    @IBAction func unwindSegueToLoginScreen (segue: UIStoryboardSegue){
+        userNameTextField.text?.removeAll()
+        passwordTextField.text?.removeAll()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordTextField.becomeFirstResponder()
+        if textField == passwordTextField{
+            logInButtonPressed()
+        }
+        return true
+        }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }

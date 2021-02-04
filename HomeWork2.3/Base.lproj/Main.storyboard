@@ -20,15 +20,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="nxE-a7-79l">
                                 <rect key="frame" x="20" y="108" width="280" height="98"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User Name" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HYU-Rd-fXm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter User Name" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HYU-Rd-fXm">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="username"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Oep-yS-ws5"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Zz-Q9-7XY">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7Zz-Q9-7XY">
                                         <rect key="frame" x="0.0" y="64" width="280" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" smartInsertDeleteType="no"/>
+                                        <connections>
+                                            <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ogR-lA-oDs"/>
+                                            <action selector="saveUserName:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="dmD-vV-sEH"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="kJX-c2-h0U"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -45,6 +56,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
+                                            <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLb-Z6-mB9"/>
                                             <segue destination="m1x-6Q-ia3" kind="show" id="8cF-Ng-njA"/>
                                         </connections>
                                     </button>
@@ -61,6 +73,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-Zm-5VM">
                                                 <rect key="frame" x="165" y="0.0" width="123" height="30"/>
                                                 <state key="normal" title="Forgot password?"/>
+                                                <connections>
+                                                    <action selector="forgotPasswordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lK8-Of-jeO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -83,8 +98,8 @@
                     </view>
                     <connections>
                         <outlet property="logInButton" destination="Gjk-QU-xKH" id="VIV-tJ-Y3T"/>
-                        <outlet property="passwordTextField" destination="7Zz-Q9-7XY" id="A6M-KH-HHT"/>
-                        <outlet property="userNameTextField" destination="HYU-Rd-fXm" id="PDn-Z1-Vfi"/>
+                        <outlet property="passwordTextField" destination="7Zz-Q9-7XY" id="LUQ-lN-ExW"/>
+                        <outlet property="userNameTextField" destination="HYU-Rd-fXm" id="SV2-2k-W2A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,6 +130,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Pw7-aA-mxZ" firstAttribute="top" secondItem="Ecg-1H-6xU" secondAttribute="bottom" constant="66" id="JUm-3a-lh6"/>
+                                </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeN-22-uQW">
                                 <rect key="frame" x="133" y="413" width="55" height="30"/>
@@ -133,7 +151,9 @@
                             <constraint firstItem="kfH-GR-FZB" firstAttribute="leading" secondItem="hxf-fb-hh4" secondAttribute="leading" constant="16" id="HGi-dC-aAP"/>
                             <constraint firstItem="hxf-fb-hh4" firstAttribute="bottom" secondItem="NeN-22-uQW" secondAttribute="bottom" constant="125" id="NRe-It-HHf"/>
                             <constraint firstItem="hxf-fb-hh4" firstAttribute="trailing" secondItem="kfH-GR-FZB" secondAttribute="trailing" constant="16" id="OGC-uF-wRh"/>
+                            <constraint firstItem="Pw7-aA-mxZ" firstAttribute="leading" secondItem="hxf-fb-hh4" secondAttribute="leading" constant="16" id="Ofa-nB-phd"/>
                             <constraint firstItem="kfH-GR-FZB" firstAttribute="top" secondItem="hxf-fb-hh4" secondAttribute="top" constant="70" id="URS-od-BzT"/>
+                            <constraint firstItem="hxf-fb-hh4" firstAttribute="trailing" secondItem="Pw7-aA-mxZ" secondAttribute="trailing" constant="16" id="V7E-DC-LUz"/>
                             <constraint firstItem="NeN-22-uQW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Pw7-aA-mxZ" secondAttribute="bottom" constant="145" id="auv-KA-l54"/>
                             <constraint firstItem="hxf-fb-hh4" firstAttribute="trailing" secondItem="NeN-22-uQW" secondAttribute="trailing" constant="132" id="ek7-5D-OPd"/>
                             <constraint firstItem="kfH-GR-FZB" firstAttribute="centerX" secondItem="hxf-fb-hh4" secondAttribute="centerX" id="esa-K8-kQB"/>
