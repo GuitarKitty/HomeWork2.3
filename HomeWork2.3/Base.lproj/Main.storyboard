@@ -36,8 +36,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" secureTextEntry="YES" smartInsertDeleteType="no"/>
                                         <connections>
-                                            <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ogR-lA-oDs"/>
-                                            <action selector="saveUserName:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="dmD-vV-sEH"/>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="kJX-c2-h0U"/>
                                         </connections>
                                     </textField>
@@ -48,16 +46,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjk-QU-xKH">
                                         <rect key="frame" x="123" y="0.0" width="42" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Gjk-QU-xKH" secondAttribute="height" multiplier="7:5" id="F0v-iY-qoJ"/>
-                                        </constraints>
                                         <state key="normal" title="Log in">
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
                                             <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLb-Z6-mB9"/>
-                                            <segue destination="m1x-6Q-ia3" kind="show" id="8cF-Ng-njA"/>
+                                            <segue destination="m1x-6Q-ia3" kind="show" identifier="showWelcomeVC" id="8cF-Ng-njA"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3g2-rP-Hfr">
@@ -67,14 +61,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
                                                 <state key="normal" title="Forgot username?"/>
                                                 <connections>
-                                                    <action selector="forgotUserNameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VhQ-oC-js1"/>
+                                                    <action selector="forgotUserNamePressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXF-1c-D4b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-Zm-5VM">
                                                 <rect key="frame" x="165" y="0.0" width="123" height="30"/>
                                                 <state key="normal" title="Forgot password?"/>
                                                 <connections>
-                                                    <action selector="forgotPasswordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lK8-Of-jeO"/>
+                                                    <action selector="forgotPasswordButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="AuN-jL-3e9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -85,7 +79,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
-                            <constraint firstItem="Gjk-QU-xKH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="21:284" id="BJy-Eu-aS7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vIF-Xo-7lu" secondAttribute="trailing" constant="16" id="KlV-fW-RKt"/>
                             <constraint firstItem="vIF-Xo-7lu" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Ms4-vR-2ih"/>
                             <constraint firstItem="nxE-a7-79l" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Wyf-YL-quy"/>
@@ -104,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
+            <point key="canvasLocation" x="18.75" y="75"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="Zmq-HZ-FTv">
@@ -141,7 +134,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LM8-bp-Yud" kind="unwind" unwindAction="unwindSegueToLoginScreenWithSegue:" id="7Yk-VT-p08"/>
+                                    <segue destination="LM8-bp-Yud" kind="unwind" unwindAction="unwindSegueToLoginScreenWithSegue:" id="0hb-4o-bBU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -163,7 +156,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="bXF-Np-TMf"/>
                     <connections>
-                        <outlet property="logOutButton" destination="NeN-22-uQW" id="1QU-NM-GWF"/>
                         <outlet property="welcomeLabel" destination="Ecg-1H-6xU" id="xki-66-aKR"/>
                     </connections>
                 </viewController>
@@ -177,9 +169,6 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
