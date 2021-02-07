@@ -14,7 +14,27 @@
 		84414D7925C8D78A00BA4684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84414D7825C8D78A00BA4684 /* Assets.xcassets */; };
 		84414D7C25C8D78A00BA4684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84414D7A25C8D78A00BA4684 /* LaunchScreen.storyboard */; };
 		84414D8725C8EC6000BA4684 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84414D8625C8EC5F00BA4684 /* WelcomeViewController.swift */; };
+		84CEED1125CEE48C00A2D12D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEED1025CEE48C00A2D12D /* UserData.swift */; };
+		84CEED1925CEF9C500A2D12D /* UserGeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEED1825CEF9C500A2D12D /* UserGeneralInfoViewController.swift */; };
+		84CEED1C25CEFA2300A2D12D /* UserSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEED1B25CEFA2300A2D12D /* UserSkillsViewController.swift */; };
+		84CEED2025CEFA4300A2D12D /* UserLastPlaceOfWorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEED1F25CEFA4300A2D12D /* UserLastPlaceOfWorkViewController.swift */; };
+		84CEED2325CF6B1F00A2D12D /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CEED2225CF6B1F00A2D12D /* UITabBarViewController.swift */; };
+		84CEED2D25CFD12000A2D12D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CEED2C25CFD12000A2D12D /* Images.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		84E2AB7C25D039F400FBCEAC /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		84414D6C25C8D78500BA4684 /* HomeWork2.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork2.3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +46,12 @@
 		84414D7B25C8D78A00BA4684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84414D7D25C8D78A00BA4684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84414D8625C8EC5F00BA4684 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		84CEED1025CEE48C00A2D12D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		84CEED1825CEF9C500A2D12D /* UserGeneralInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserGeneralInfoViewController.swift; path = HomeWork2.3/ViewControllers/UserGeneralInfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		84CEED1B25CEFA2300A2D12D /* UserSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSkillsViewController.swift; sourceTree = "<group>"; };
+		84CEED1F25CEFA4300A2D12D /* UserLastPlaceOfWorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLastPlaceOfWorkViewController.swift; sourceTree = "<group>"; };
+		84CEED2225CF6B1F00A2D12D /* UITabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarViewController.swift; sourceTree = "<group>"; };
+		84CEED2C25CFD12000A2D12D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +84,62 @@
 		84414D6E25C8D78500BA4684 /* HomeWork2.3 */ = {
 			isa = PBXGroup;
 			children = (
-				84414D6F25C8D78500BA4684 /* AppDelegate.swift */,
-				84414D7125C8D78500BA4684 /* SceneDelegate.swift */,
-				84414D7325C8D78500BA4684 /* LoginViewController.swift */,
-				84414D7525C8D78500BA4684 /* Main.storyboard */,
-				84414D8625C8EC5F00BA4684 /* WelcomeViewController.swift */,
-				84414D7825C8D78A00BA4684 /* Assets.xcassets */,
-				84414D7A25C8D78A00BA4684 /* LaunchScreen.storyboard */,
-				84414D7D25C8D78A00BA4684 /* Info.plist */,
+				84B9A2A925CECF9700123520 /* Models */,
+				84B9A2A425CECF2F00123520 /* ViewControllers */,
+				84B9A2A225CECEB300123520 /* Storyboards */,
+				84B9A2A625CECF4A00123520 /* Resourses */,
 			);
 			path = HomeWork2.3;
+			sourceTree = "<group>";
+		};
+		84B9A2A225CECEB300123520 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84414D7525C8D78500BA4684 /* Main.storyboard */,
+				84414D7A25C8D78A00BA4684 /* LaunchScreen.storyboard */,
+				84B9A2A325CECEF700123520 /* SupportingFiles */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		84B9A2A325CECEF700123520 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				84414D7D25C8D78A00BA4684 /* Info.plist */,
+				84414D6F25C8D78500BA4684 /* AppDelegate.swift */,
+				84414D7125C8D78500BA4684 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		84B9A2A425CECF2F00123520 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				84414D7325C8D78500BA4684 /* LoginViewController.swift */,
+				84CEED2225CF6B1F00A2D12D /* UITabBarViewController.swift */,
+				84414D8625C8EC5F00BA4684 /* WelcomeViewController.swift */,
+				84CEED1825CEF9C500A2D12D /* UserGeneralInfoViewController.swift */,
+				84CEED1B25CEFA2300A2D12D /* UserSkillsViewController.swift */,
+				84CEED1F25CEFA4300A2D12D /* UserLastPlaceOfWorkViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84B9A2A625CECF4A00123520 /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				84CEED2C25CFD12000A2D12D /* Images.xcassets */,
+				84414D7825C8D78A00BA4684 /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		84B9A2A925CECF9700123520 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84CEED1025CEE48C00A2D12D /* UserData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +154,7 @@
 				84414D6A25C8D78500BA4684 /* Resources */,
 			);
 			buildRules = (
+				84E2AB7C25D039F400FBCEAC /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -128,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84414D7C25C8D78A00BA4684 /* LaunchScreen.storyboard in Resources */,
+				84CEED2D25CFD12000A2D12D /* Images.xcassets in Resources */,
 				84414D7925C8D78A00BA4684 /* Assets.xcassets in Resources */,
 				84414D7725C8D78500BA4684 /* Main.storyboard in Resources */,
 			);
@@ -141,8 +215,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84414D7425C8D78500BA4684 /* LoginViewController.swift in Sources */,
+				84CEED2025CEFA4300A2D12D /* UserLastPlaceOfWorkViewController.swift in Sources */,
 				84414D8725C8EC6000BA4684 /* WelcomeViewController.swift in Sources */,
+				84CEED2325CF6B1F00A2D12D /* UITabBarViewController.swift in Sources */,
+				84CEED1C25CEFA2300A2D12D /* UserSkillsViewController.swift in Sources */,
+				84CEED1925CEF9C500A2D12D /* UserGeneralInfoViewController.swift in Sources */,
 				84414D7025C8D78500BA4684 /* AppDelegate.swift in Sources */,
+				84CEED1125CEE48C00A2D12D /* UserData.swift in Sources */,
 				84414D7225C8D78500BA4684 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,15 +367,16 @@
 		84414D8125C8D78A00BA4684 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 3S29CPM5XY;
-				INFOPLIST_FILE = HomeWork2.3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HomeWork2.3/Storyboards/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "GK.HomeWork2-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -307,15 +387,16 @@
 		84414D8225C8D78A00BA4684 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = 3S29CPM5XY;
-				INFOPLIST_FILE = HomeWork2.3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HomeWork2.3/Storyboards/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "GK.HomeWork2-3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
