@@ -14,7 +14,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet var logInButton: UIButton!
  
-    
     // MARK:  - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let tabBarController = segue.destination as! UITabBarController

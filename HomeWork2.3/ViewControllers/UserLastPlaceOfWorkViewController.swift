@@ -22,7 +22,6 @@ class UserLastPlaceOfWorkViewController: UIViewController {
         userWorkCompanyNameLabel.text = companyName
         userRoleInWorkCompany.text = roleInCompany
         yearsOfUserInCompany.text = yearsInCompany
-
     }
 
 }
